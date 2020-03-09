@@ -57,6 +57,7 @@ To configure the Widepaycash Payments Gateway plugin to work with your WordPress
 * __API Key__ - provide your Widepaycash [API key](https://account.widepaycash.com/profile#login) on your widepaycash dashboard.
 * __Widepaycash ClientSecret__ - provide your Widepaycash API Secret](https://account.widepaycash.com/profile#login) on your widepaycash dashboard.
 * Remember to configure your currency to Ghana Cedis on WooCommerce.
+* Set the callback url for your API credetials to (http://your-site.com/wc-api/wc_widepaycash_payment_callback/)
 
 == Frequently Asked Questions ==
 

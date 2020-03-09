@@ -63,10 +63,11 @@ function widepaycash_init()
 						add_action('woocommerce_update_options_payment_gateways_' . $this->id, array(&$this, 'process_admin_options'));
 					} else {
 						add_action('woocommerce_update_options_payment_gateways', array(&$this, 'process_admin_options'));
-					}				}
+					}	
+				}
 				
 				//register webhook listener action
-				add_action( 'woocommerce_api_WC_Widepaycash_Payment_Gateway', array( $this, 'check_widepaycash_payment_webhook' ) );
+				add_action( 'woocommerce_api_wc_widepaycash_payment_callback', array( $this, 'check_widepaycash_payment_webhook' ) );
 
 			}
 
@@ -149,6 +150,8 @@ function widepaycash_init()
 					//add notice to order to inform merchant of 
 					$order->add_order_note('Payment failed at WidepayCash.');
 				}
+
+				echo '12344';
 				
 			}
 
