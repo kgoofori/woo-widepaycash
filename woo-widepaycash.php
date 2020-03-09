@@ -224,7 +224,7 @@ function widepaycash_init()
 				
 				
 				//initiate request to WidepayCash payments API
-				$base_url = 'https:api.widepaycash.com/v1.1/checkout/initialize';
+				$base_url = 'https://api.widepaycash.com/v1.1/checkout/initialize';
 				$response = wp_remote_post($base_url, array(
 					'method' => 'POST',
 					'timeout' => 45,
