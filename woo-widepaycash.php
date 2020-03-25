@@ -210,7 +210,7 @@ function widepaycash_init()
 				$widepaycash_request_args = [
 					//   "items" => $widepaycash_items,
 					  "refNo" => date('YmdHis-').$order_id ,
-					  "amount" => WC()->cart->get_cart_subtotal() + $order_tax_total +  $order_shipping_total,
+					  "amount" =>  $order->get_total() + $order_tax_total +  $order_shipping_total,
                       
                     //   "totalAmount" =>$order_shipping_total + $total_cost + $order_tax_total, //get total cost of order items // WC()->cart->get_cart_subtotal();
                       "description" => $this->get_option('widepaycash_description'),
