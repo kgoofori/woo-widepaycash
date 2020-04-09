@@ -1,8 +1,8 @@
-=== Widepaycash Payments WooCommerce Gateway  ===
+=== Widepaycash WooCommerce Payments Gateway  ===
 Contributors: kgoofori
 Tags: widepaycash, woocommerce, payment gateway, mobile money, kgoofori, mastercard, visa, payments api
 Requires at least: 4.4
-Tested up to: 5.1.1
+Tested up to: 5.4
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
