@@ -8,7 +8,7 @@ This Woocommerce payment gateway allows merchants to add Widepaycash Payments to
 Sign up for a free [Widepaycash Merchant Account](https://account.widepaycash.com)
 
 
-##Plugin Features
+## Plugin Features
 
 - Accept payments from bank cards (VISA & Mastercard)
 - Accept payments from Ghanainan mobile money channels
@@ -26,7 +26,7 @@ Sign up for a free [Widepaycash Merchant Account](https://account.widepaycash.co
 - 	Click on the __Widepaycash Payments__ link from the available Checkout Options
 -	Configure your __Widepaycash Payments__ settings. See below for details.
 
-= Manual Installation =
+### Manual Installation
 - 	Download the plugin zip file
 - 	Login to your WordPress Admin. Click on "Plugins > Add New" from the left hand menu.
 -   Click on the "Upload" option, then click "Choose File" to select the zip file from your computer. Once selected, press "OK" and press the "Install Now" button.
