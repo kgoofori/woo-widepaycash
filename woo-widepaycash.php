@@ -126,16 +126,19 @@ function widepaycash_init()
 			{
 				$decode_webhook = json_decode(@file_get_contents("php://input"));
 
-				 global $woocommerce;
-				 $order_ref = $decode_webhook->Data->refNo;
+				if($this->widepaycash_clientid != $decode_webhook->apiKey) return;
 
-				 //retrieve order id from the client reference
-				 $order_ref_items = explode('-', $order_ref);
-				 $order_id = end($order_ref_items);
+				global $woocommerce;
+				$order_ref = $decode_webhook->refNo;
 
-				 $order = new WC_Order( $order_id );
-				 //process the order with returned data from WidepayCash callback
-				if($decode_webhook->ResponseCode == '0000' && $decode_webhook->transactionStatus == 'SUCCESSFUL')
+				//retrieve order id from the client reference
+				$order_ref_items = explode('-', $order_ref);
+				$order_id = end($order_ref_items);
+
+				$order = new WC_Order( $order_id );
+				//process the order with returned data from WidepayCash callback
+
+				if($decode_webhook->transactionStatus == 'SUCCESSFUL')
 				{
 					
 					$order->add_order_note('WidepayCash payment completed');				
