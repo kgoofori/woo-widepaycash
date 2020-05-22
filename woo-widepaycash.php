@@ -179,43 +179,16 @@ function widepaycash_init()
 
 				//Add shipping and VAT as a stand alone item
 				//so that it appears in the customers bill.
-				$order_shipping_total = $order->get_total_shipping();
+				// $order_shipping_total = $order->get_total_shipping();
 				$order_tax_total = $order->get_total_tax();
-
-				// $widepaycash_items[$items_counter] = [
-				// 			"name" => "VAT",
-				// 			"quantity" => 1, // VAT is always 1. Lol
-				// 			"unitPrice" => $order_tax_total
-				// 	];
-				// 	$items_counter = $items_counter+1;
-				// $widepaycash_items[$items_counter] = [
-				// 			"name" => "Shipping",
-				// 			"quantity" => 1, // Always 1
-				// 			"unitPrice" => $order_shipping_total
-				// 	];
-					
-				// 	$items_counter = $items_counter+1;
-
-
-				// foreach ($order_data as $order_key => $order_value):
-				// 	$widepaycash_items[$items_counter] = [
-				// 			"name" => $order_value->get_name(),
-				// 			"quantity" => $order_value->get_quantity(), // Get the item quantity
-				// 			"unitPrice" => $order_value->get_total()/$order_value->get_quantity()
-				// 	];
-					
-				// 		$total_cost += $order_value->get_total();
-				// 		$items_counter++;
-				// endforeach;
-
 
 				//widepaycash payment request body args
 				$widepaycash_request_args = [
-					//   "items" => $widepaycash_items,
 					  "refNo" => date('YmdHis-').$order_id ,
-					  "amount" =>  $order->get_total() + $order_tax_total +  $order_shipping_total,
-                      
-                    //   "totalAmount" =>$order_shipping_total + $total_cost + $order_tax_total, //get total cost of order items // WC()->cart->get_cart_subtotal();
+					// was double charging shipping
+					// "amount" =>  $order->get_total() + $order_tax_total +  $order_shipping_total,
+
+					  "amount" =>  $order->get_total() + $order_tax_total,
                       "description" => $this->get_option('widepaycash_description'),
 					  "callbackUrl" => WC()->api_request_url( 'WC_Widepaycash_Payment_Gateway'), //register callback
 					  
